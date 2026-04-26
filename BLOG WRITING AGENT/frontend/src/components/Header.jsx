@@ -35,7 +35,7 @@ export default function Header({ onNavigate }) {
               <PenLine className="w-3.5 h-3.5 text-violet-400" />
             </div>
             <span className="text-sm font-bold font-space text-white tracking-tight">
-              Blog<span className="text-violet-400">Agent</span>
+              Intelli<span className="text-violet-400">Blog</span>
             </span>
           </div>
 
@@ -43,7 +43,7 @@ export default function Header({ onNavigate }) {
           <div className="hidden sm:flex items-center gap-6 text-[11px] font-semibold text-slate-400 uppercase tracking-widest">
             <a href="#" onClick={(e) => handleNavClick('write', e)} className="hover:text-white transition-colors duration-200">Write</a>
             <a href="#" onClick={(e) => handleNavClick('history', e)} className="hover:text-white transition-colors duration-200">History</a>
-            <a href="#" className="hover:text-white transition-colors duration-200">About</a>
+            <a href="#" onClick={(e) => handleNavClick('about', e)} className="hover:text-white transition-colors duration-200">About</a>
           </div>
 
           {/* User Info & Logout */}
@@ -91,16 +91,9 @@ export default function Header({ onNavigate }) {
                 <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Logged in as</p>
                 <p className="text-sm font-bold text-white">{user?.username}</p>
               </div>
-              {navLinks.map(({ label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  onClick={() => setOpen(false)}
-                  className="px-5 py-3.5 text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
-                >
-                  {label}
-                </a>
-              ))}
+              <a href="#" onClick={(e) => handleNavClick('write', e)} className="px-5 py-3.5 text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Write</a>
+              <a href="#" onClick={(e) => handleNavClick('history', e)} className="px-5 py-3.5 text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">History</a>
+              <a href="#" onClick={(e) => handleNavClick('about', e)} className="px-5 py-3.5 text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">About</a>
               <div className="mx-5 mt-1 mb-3 pt-3 border-t border-white/10 flex flex-col gap-3">
                 <button
                   onClick={() => { logout(); setOpen(false); }}

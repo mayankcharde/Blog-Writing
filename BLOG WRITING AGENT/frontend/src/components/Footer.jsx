@@ -10,7 +10,7 @@ export default function Footer() {
             <PenLine className="w-3 h-3 text-violet-400" />
           </div>
           <span className="text-sm font-bold font-space text-white tracking-tight">
-            Blog<span className="text-violet-400">Agent</span>
+            Intelli<span className="text-violet-400">Blog</span>
           </span>
         </div>
 

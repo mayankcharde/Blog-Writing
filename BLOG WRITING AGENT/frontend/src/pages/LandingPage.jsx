@@ -37,7 +37,7 @@ const LandingPage = () => {
         <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-[#030014]">
             {/* Professional Background Animation */}
             <div className="absolute inset-0 z-0">
-                <ColorBends 
+                <ColorBends
                     colors={['#8b5cf6', '#06b6d4', '#6366f1', '#d946ef']}
                     speed={0.12}
                     intensity={1.8}
@@ -50,16 +50,16 @@ const LandingPage = () => {
             </div>
 
             <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10 py-12 lg:py-0 px-4 md:px-10">
-                
+
                 {/* Left Side: Brand & Value Prop */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="space-y-8 lg:space-y-12 text-center lg:text-left"
                 >
                     <div className="space-y-6">
-                        <motion.div 
+                        <motion.div
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.2 }}
@@ -69,7 +69,7 @@ const LandingPage = () => {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
                             </span>
-                            AI Content Generation 2.0
+
                         </motion.div>
                         <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white tracking-tight leading-[1.05]">
                             Write <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400">Smarter</span>, <br />
@@ -107,7 +107,7 @@ const LandingPage = () => {
                 >
                     {/* Glow effect behind card */}
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                    
+
                     <div className="relative bg-[#0a0a1a]/60 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 lg:p-12 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                         <div className="flex flex-col gap-8">
                             <div className="space-y-2 text-center lg:text-left">
@@ -120,13 +120,13 @@ const LandingPage = () => {
                             </div>
 
                             <div className="flex items-center gap-1 p-1 bg-white/5 rounded-2xl w-full border border-white/5">
-                                <button 
+                                <button
                                     onClick={() => setIsLogin(true)}
                                     className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold transition-all duration-300 ${isLogin ? 'bg-white/10 text-white shadow-xl' : 'text-slate-500 hover:text-slate-300'}`}
                                 >
                                     <LogIn className="w-4 h-4" /> Login
                                 </button>
-                                <button 
+                                <button
                                     onClick={() => setIsLogin(false)}
                                     className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold transition-all duration-300 ${!isLogin ? 'bg-white/10 text-white shadow-xl' : 'text-slate-500 hover:text-slate-300'}`}
                                 >
@@ -149,8 +149,8 @@ const LandingPage = () => {
                                                 <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-violet-400 transition-colors">
                                                     <User className="w-5 h-5" />
                                                 </div>
-                                                <input 
-                                                    type="text" 
+                                                <input
+                                                    type="text"
                                                     name="username"
                                                     required={!isLogin}
                                                     placeholder="Your name"
@@ -169,8 +169,8 @@ const LandingPage = () => {
                                         <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-violet-400 transition-colors">
                                             <Mail className="w-5 h-5" />
                                         </div>
-                                        <input 
-                                            type="email" 
+                                        <input
+                                            type="email"
                                             name="email"
                                             required
                                             placeholder="name@company.com"
@@ -187,8 +187,8 @@ const LandingPage = () => {
                                         <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-violet-400 transition-colors">
                                             <Lock className="w-5 h-5" />
                                         </div>
-                                        <input 
-                                            type="password" 
+                                        <input
+                                            type="password"
                                             name="password"
                                             required
                                             placeholder="••••••••"
@@ -200,17 +200,17 @@ const LandingPage = () => {
                                 </div>
 
                                 {error && (
-                                    <motion.p 
-                                        initial={{ opacity: 0 }} 
-                                        animate={{ opacity: 1 }} 
+                                    <motion.p
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
                                         className="text-red-400 text-xs font-medium px-1 bg-red-400/5 py-2 rounded-lg border border-red-400/20 text-center"
                                     >
                                         {error}
                                     </motion.p>
                                 )}
 
-                                <button 
-                                    type="submit" 
+                                <button
+                                    type="submit"
                                     disabled={loading}
                                     className="w-full bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-600 hover:scale-[1.02] active:scale-[0.98] text-white font-bold py-4 rounded-2xl shadow-xl shadow-violet-500/20 flex items-center justify-center gap-3 group transition-all disabled:opacity-50 disabled:scale-100"
                                 >

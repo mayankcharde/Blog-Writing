@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import PlasmaWave from './components/Grainient';
 import LandingPage from './pages/LandingPage';
 import History from './components/History';
+import About from './components/About';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 const API_BASE = import.meta.env.VITE_BLOG_API_URL;
@@ -23,7 +24,7 @@ function BlogApp() {
   const [error, setError] = useState(null);
   const [saving, setSaving] = useState(false);
   const [saveMessage, setSaveMessage] = useState('');
-  const [currentView, setCurrentView] = useState('write'); // 'write' or 'history'
+  const [currentView, setCurrentView] = useState('write'); // 'write', 'history', or 'about'
   const { user, token, loading: authLoading } = useAuth();
 
   const handleAutoSave = async (blogData) => {
@@ -127,6 +128,8 @@ function BlogApp() {
 
         {currentView === 'history' ? (
           <History onSelectBlog={handleSelectHistoryBlog} />
+        ) : currentView === 'about' ? (
+          <About />
         ) : (
           <>
             {/* HOME: Hero + Input */}
