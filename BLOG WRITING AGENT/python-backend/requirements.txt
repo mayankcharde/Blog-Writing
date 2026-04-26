@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langgraph
+langchain-mistralai
+langchain-core
+langchain-community
+python-dotenv
+google-genai
+pydantic
+tavily-python
+httpx

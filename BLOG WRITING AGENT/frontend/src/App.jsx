@@ -13,7 +13,8 @@ import LandingPage from './pages/LandingPage';
 import History from './components/History';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_BLOG_API_URL;
+const AUTH_BASE = import.meta.env.VITE_AUTH_API_URL;
 
 function BlogApp() {
   const [topic, setTopic] = useState('');
@@ -27,7 +28,7 @@ function BlogApp() {
 
   const handleAutoSave = async (blogData) => {
     try {
-      await axios.post('http://localhost:5000/api/blogs', {
+      await axios.post(`${AUTH_BASE}/blogs`, {
         title: blogData.plan?.blog_title || topic,
         content: blogData.final,
         topic: topic

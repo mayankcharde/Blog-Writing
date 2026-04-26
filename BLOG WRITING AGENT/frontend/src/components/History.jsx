@@ -16,7 +16,7 @@ const History = ({ onSelectBlog }) => {
 
     const fetchHistory = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/blogs', {
+            const res = await axios.get(`${import.meta.env.VITE_AUTH_API_URL}/blogs`, {
                 headers: { 'x-auth-token': token }
             });
             setBlogs(res.data);
